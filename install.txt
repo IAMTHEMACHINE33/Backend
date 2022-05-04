@@ -1,0 +1,7 @@
+npm i express
+npm i bycrypt
+npm i jsonwebtoken
+
+
+token auth
+Bearer //token
