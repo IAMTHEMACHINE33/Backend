@@ -2,31 +2,29 @@ const mongoose = require("mongoose");
 const { mainModule } = require("process");
 const { StringDecoder } = require("string_decoder");
 
-const customer = new mongoose.Schema({
-    firstname :{
+const product = new mongoose.Schema({
+    name :{
         type: String,
         required: true
     },
-    lastname : {
+    price : {
         type : String,
         required: true
     },
-    username:{
+    description:{
         type :String,
         required: true
     },
-    age:{
+    qty:{
         type : Number,
     },
-    password : {
-        type : String,
-        required: true
+    cust_img:{
+        type: String,
     },
-    email :{
-        type : String,
-        required: true
+    userId:{
+        type : mongoose.Schema.Types.ObjectId,
+        ref:'Customer'
     }
 });
 
-module.exports = mongoose.model('Customer',customer);
-
+module.exports = mongoose.model('Product',product);
